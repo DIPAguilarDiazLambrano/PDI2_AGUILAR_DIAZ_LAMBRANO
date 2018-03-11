@@ -10,7 +10,7 @@ def T_fxy(imagen, gamma):
 def processImage2(image):
     valores_gamma = [0.3, 0.5, 0.8, 1, 5, 10] 
     position = 1; 
-    plt.figure(figsize = (12,12))
+    plt.figure(figsize = (14, 14))
     for y in valores_gamma:
         plt.subplot(2, 3, position)
         position = position + 1

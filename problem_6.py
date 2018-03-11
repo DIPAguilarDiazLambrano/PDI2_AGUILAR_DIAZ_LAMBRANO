@@ -42,13 +42,14 @@ def processImg(name):
     plt.figure(figsize=(12,12))
     plt.subplot(1,2,1)
     plot_image(img, 'Original Image')
-    
+    plt.suptitle('Image: ' + name, fontsize=16)
+        
     # display gradients
     plt.figure(figsize=(12,12))
     plt.subplot(2,2,1)
-    plot_image(Gx, 'Gradient X')
+    plot_image(Gx, 'Horizontal Gradient')
     plt.subplot(2,2,2)
-    plot_image(Gy, 'Gradient Y')
+    plot_image(Gy, 'Vertical Gradient')
     # display gradient magnitude 
     plt.subplot(2,2,3)
     plot_image(mag_grad, 'Magnitude Gradient')

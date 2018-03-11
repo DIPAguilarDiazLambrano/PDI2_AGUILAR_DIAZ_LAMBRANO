@@ -14,7 +14,6 @@ def processImage(matrix_image, name):
     plt.title("Original picture")
     plt.axis('off')
     # display orignal histogram and cdf
-    #plt.subplot
     plt.subplot(2,2,2)
     histogram(matrix_image)
     plt.title("Original Histogram and CDF")
@@ -41,20 +40,15 @@ def histogram(image):
     plt.hist(image.ravel(), 256, color = 'b', normed = True) 
     plt.xlim([0,256])
     plt.grid(True)
-
 #------------------------------------------------------------------------------
 def equalize_image(image):
     equalized_image = cv2.equalizeHist(image)
     return equalized_image
-
 #-------------------------------------------------------------------------------
 def main():
-    #images = [] # List with all the images read
     image_names = ['darkPollen.jpg', 'lightPollen.jpg', 'lowContrastPollen.jpg', 
                    'pollen.jpg', 'spine.jpg', 'runway.jpg']
     for name in (image_names):
-        #load image as RCB format
-        #image = cv2.imread("images/" + name, cv2.IMREAD_COLOR);
         image = cv2.imread("images/" + name, 0)
         processImage(image, name)
     plt.show()

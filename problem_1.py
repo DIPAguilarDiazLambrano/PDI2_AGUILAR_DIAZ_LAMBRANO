@@ -2,7 +2,7 @@ from os import listdir, path
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-%matplotlib inline
+#%matplotlib inline
 
 #-------------------------------------------------------------------------------
 def processImage(matrix_image, name):
@@ -35,7 +35,6 @@ def histogram(image):
     original_cdf = hist_image.cumsum()
     #normalize cdf
     h_max = hist_image.max()
-    normalized_hist = hist_image/h_max
     normalized_cdf = original_cdf * h_max/ original_cdf.max()
     #plot histogram and cdf
     plt.plot(normalized_cdf, color = 'r')
